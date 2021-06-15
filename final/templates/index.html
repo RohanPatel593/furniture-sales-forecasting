@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>Furniture Sales Forecasting</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  
+</head>
+
+<body>
+<h1>Machine Learning Mini-Project</h1>
+ <div class="login">
+	<h1>Furniture Sales Forecasting</h1>
+
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="date" placeholder="Date in YYYY-MM-01" required="required" />
+	
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+	<a href="{{ url_for('static', filename='graph.png') }}" target="blank">Click here to view the graph</a>
+   <br>
+   <br>
+   {{ date }}
+   <br>
+   {{ lower_price }}
+   <br>
+   {{ upper_price }}
+ </div>
+
+
+</body>
+</html>
